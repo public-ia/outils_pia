@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guide de prompting pratique</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Arial', sans-serif;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .main-title {
+            text-align: center;
+            color: white;
+            font-size: 3.5em;
+            font-weight: bold;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            letter-spacing: 2px;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #f0f0f0;
+            font-size: 1.3em;
+            margin-bottom: 40px;
+            font-weight: 500;
+        }
+        
+        .essential-section {
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            color: #FFD700;
+            font-size: 1.8em;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+        
+        .grid {
+            display: grid;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .essential-grid {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+        
+        .complementary-grid {
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        }
+        
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            border: 3px solid;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: inherit;
+        }
+        
+        .essential-card {
+            border-color: #8B0000;
+            background: linear-gradient(135deg, #ffe6e6, #fff);
+        }
+        
+        .essential-card::before {
+            background: linear-gradient(90deg, #8B0000, #FF4500);
+        }
+        
+        .complementary-card {
+            border-color: #4A148C;
+            background: linear-gradient(135deg, #f3e5f5, #fff);
+        }
+        
+        .complementary-card::before {
+            background: linear-gradient(90deg, #4A148C, #7B1FA2);
+        }
+        
+        .card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            gap: 15px;
+        }
+        
+        .card-icon {
+            font-size: 2.5em;
+            min-width: 60px;
+        }
+        
+        .card-title {
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .card-subtitle {
+            font-size: 0.9em;
+            color: #666;
+            font-style: italic;
+        }
+        
+        .card-content {
+            color: #555;
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+        
+        .method-overview {
+            background: rgba(255,255,255,0.95);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .method-title {
+            color: #4A148C;
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .method-description {
+            color: #333;
+            font-size: 1.1em;
+            text-align: center;
+            line-height: 1.6;
+        }
+        
+        @media (max-width: 768px) {
+            .main-title {
+                font-size: 2.5em;
+            }
+            
+            .card {
+                padding: 20px;
+            }
+            
+            .card-icon {
+                font-size: 2em;
+                min-width: 50px;
+            }
+            
+            .card-title {
+                font-size: 1.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="main-title">GUIDE DE PROMPTING PRATIQUE</h1>
+        
+        <div class="method-overview">
+            <h2 class="method-title">Méthode R-O-C-T-T-F-C</h2>
+            <p class="method-description">
+                Un prompt efficace repose sur 7 briques complémentaires pour maximiser la qualité des réponses de votre LLM
+            </p>
+        </div>
+
+        
+        <div class="essential-section">
+            <h2 class="section-title">🔥 LES 3 BRIQUES INDISPENSABLES</h2>
+            <div class="grid essential-grid">
+                <div class="card essential-card">
+                    <div class="card-header">
+                        <div class="card-icon">🎭</div>
+                        <div>
+                            <div class="card-title">R = RÔLE</div>
+                            <div class="card-subtitle">Cadre d'expertise de l'IA</div>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        Définit le personnage et l'expertise que l'IA doit incarner pour répondre avec la bonne perspective et les bonnes compétences.
+                        <br><br>
+                        <strong>Exemples de rôles :</strong>
+                        <br>• Élu
+                        <br>• DGS, DGA 
+                        <br>• Directeur
+                        <br>• Urbaniste 
+                        <br>• Enseignant 
+                        <br>• Coach 
+                        <br>• Expert 
+                        <br>• Relecteur
+                        <br>• Client difficile 
+                        <br>• Professionnel 
+                        <br>• Consultant
+                        <br>• Analyste 
+                        <br>• Mentor 
+                        <br>• Critique constructif
+                        <br><br>
+                        <strong>Exemple concret :</strong> "Tu es un expert en urbanisme avec 15 ans d'expérience..."
+                    </div>
+                </div>
+                
+                <div class="card essential-card">
+                    <div class="card-header">
+                        <div class="card-icon">📋</div>
+                        <div>
+                            <div class="card-title">C = CONTEXTE</div>
+                            <div class="card-subtitle">Source d'information à utiliser</div>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        Fournit les informations de base, les données et le cadre situationnel nécessaires pour une réponse pertinente.
+                        <br><br>
+                        <strong>Types de contexte :</strong>
+                        <br>• Situation d'entreprise 
+                        <br>• Données historiques
+                        <br>• Public cible 
+                        <br>• Contraintes budgétaires
+                        <br>• Environnement technique 
+                        <br>• Objectifs business
+                        <br>• Documents de référence 
+                        <br>• Benchmarks
+                        <br><br>
+                        <strong>Exemple concret :</strong> "Dans le contexte d'une communauté de communes de 50 agents avec un budget Infrastructure de 100k€/an..."
+                    </div>
+                </div>
+                
+                <div class="card essential-card">
+                    <div class="card-header">
+                        <div class="card-icon">⚡</div>
+                        <div>
+                            <div class="card-title">T = TÂCHE</div>
+                            <div class="card-subtitle">Action précise demandée à l'IA</div>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        Spécifie clairement ce que l'IA doit faire, l'action concrète à accomplir pour atteindre l'objectif.
+                        <br><br>
+                        <strong>Exemples de tâches :</strong>
+                        <br>• Rédiger un article 
+                        <br>• Structurer un plan de livre
+                        <br>• Concevoir une séquence d'e-mails 
+                        <br>• Résumer un contenu
+                        <br>• Analyser un sujet 
+                        <br>• Générer un graphique
+                        <br>• Créer un plan d'action 
+                        <br>• Proposer des solutions
+                        <br>• Identifier des problèmes 
+                        <br>• Optimiser un processus
+                        <br>• Quels sont les angles morts
+                        <br><br>
+                        <strong>Exemple concret :</strong> "Analyse ces métriques et identifie les 3 problèmes principaux avec des recommandations..."
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div>
+            <h2 class="section-title">⚙️ LES 4 BRIQUES COMPLÉMENTAIRES</h2>
+            <div class="grid complementary-grid">
+                <div class="card complementary-card">
+                    <div class="card-header">
+                        <div class="card-icon">🎯</div>
+                        <div>
+                            <div class="card-title">O = OBJECTIF</div>
+                            <div class="card-subtitle">Finalité du prompt</div>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        Précise le but final et les résultats attendus de l'interaction avec l'IA.
+                        <br><br>
+                        <strong>Types d'objectifs :</strong>
+                        <br>• Fixer 3 objectifs SMART 
+                        <br>• Créer un plan d'action
+                        <br>• Découper un objectif en étapes 
+                        <br>• Planifier sur 30 jours
+                        <br>• Suivre les progrès 
+                        <br>• Prioriser selon l'impact
+                        <br>• Planifier un projet 
+                        <br>• Définir des KPIs
+                        <br><br>
+                        <strong>Exemple :</strong> "L'objectif est d'écrire notre rapport d'activité 2024"
+                    </div>
+                </div>
+                
+                <div class="card complementary-card">
+                    <div class="card-header">
+                        <div class="card-icon">🎨</div>
+                        <div>
+                            <div class="card-title">T = TON</div>
+                            <div class="card-subtitle">Style d'écriture attendu</div>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        Définit le style, le registre et l'approche communicationnelle de la réponse.
+                        <br><br>
+                        <strong>Exemples de styles :</strong>
+                        <br>• Langage poétique 
+                        <br>• Ton formel 
+                        <br>• Phrases courtes
+                        <br>• Style Shakespeare 
+                        <br>• Français soutenu 
+                        <br>• Ton académique
+                        <br>• Persuasif orienté marketing 
+                        <br>• Simplifié (10 ans)
+                        <br>• Narratif storytelling 
+                        <br>• Première personne
+                        <br>• Références culturelles 
+                        <br>• Anecdotes concrètes
+                        <br><br>
+                        <strong>Exemple :</strong> "Utilise un ton professionnel mais accessible, évite le jargon technique"
+                    </div>
+                </div>
+                
+                <div class="card complementary-card">
+                    <div class="card-header">
+                        <div class="card-icon">📐</div>
+                        <div>
+                            <div class="card-title">F = FORMAT</div>
+                            <div class="card-subtitle">Structure de la réponse</div>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        Spécifie la mise en forme, l'organisation et la présentation souhaitées.
+                        <br><br>
+                        <strong>Formats disponibles :</strong>
+                        <br>• Tableau 
+                        <br>• Liste 
+                        <br>• Résumé 
+                        <br>• Feuille de calcul
+                        <br>• Graphiques 
+                        <br>• Markdown 
+                        <br>• PDF 
+                        <br>• Diagramme Gantt
+                        <br>• Nuage de mots 
+                        <br>• Émojis 
+                        <br>• Puces 
+                        <br>• Carte mentale
+                        <br>• PowerPoint/Slides 
+                        <br>• Timeline 
+                        <br>• Plan visuel
+                        <br>• FAQ 
+                        <br>• Carte conceptuelle 
+                        <br>• Checklist
+                        <br><br>
+                        <strong>Exemple :</strong> "Présente sous forme de tableau avec 3 colonnes : Problème, Impact, Solution"
+                    </div>
+                </div>
+                
+                <div class="card complementary-card">
+                    <div class="card-header">
+                        <div class="card-icon">⛔</div>
+                        <div>
+                            <div class="card-title">C = CONTRAINTES</div>
+                            <div class="card-subtitle">Longueur, ton, public, exclusions</div>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        Établit les limites, restrictions et éléments à éviter dans la réponse.
+                        <br><br>
+                        <strong>Types de contraintes :</strong>
+                        <br>• Longueur : "Maximum 500 mots" • "3 paragraphes max"
+                        <br>• Public : "Pour des débutants" • "Niveau expert"
+                        <br>• Exclusions : "Évite les termes techniques"
+                        <br>• Délai : "Réponse en 2 minutes" • "Version rapide"
+                        <br>• Style : "Sans jargon" • "Pas de métaphores" • "Sans émojis"
+                        <br><br>
+                        <strong>Exemple :</strong> "Maximum 300 mots, évite le jargon technique, pour un public non-expert"
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card complementary-card" style="grid-column: 1 / -1;">
+                    <div class="card-header">
+                        <div class="card-icon"></div>
+                        <div>
+                            <div class="card-title">TABLEAU ÉLARGI DES TONS UTILISABLES</div>
+                            <div class="card-subtitle">Palette émotionnelle complète</div>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div style="overflow-x: auto;">
+                            <table style="width: 100%; border-collapse: collapse; margin-top: 10px;">
+                                <thead>
+                                    <tr style="background-color: #f5f5f5;">
+                                        <th style="padding: 12px; border: 1px solid #ddd; font-weight: bold; background-color: #8B0000; color: white;">Joie</th>
+                                        <th style="padding: 12px; border: 1px solid #ddd; font-weight: bold; background-color: #FF4500; color: white;">Colère</th>
+                                        <th style="padding: 12px; border: 1px solid #ddd; font-weight: bold; background-color: #4682B4; color: white;">Tristesse</th>
+                                        <th style="padding: 12px; border: 1px solid #ddd; font-weight: bold; background-color: #8B4513; color: white;">Peur</th>
+                                        <th style="padding: 12px; border: 1px solid #ddd; font-weight: bold; background-color: #FFD700; color: black;">Surprise</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td style="padding: 8px; border: 1px solid #ddd;">Joyeux</td><td style="padding: 8px; border: 1px solid #ddd;">Colérique</td><td style="padding: 8px; border: 1px solid #ddd;">Triste</td><td style="padding: 8px; border: 1px solid #ddd;">Inquiet</td><td style="padding: 8px; border: 1px solid #ddd;">Étonné</td></tr>
+                                    <tr><td style="padding: 8px; border: 1px solid #ddd;">Optimiste</td><td style="padding: 8px; border: 1px solid #ddd;">Méprisant</td><td style="padding: 8px; border: 1px solid #ddd;">Pessimiste</td><td style="padding: 8px; border: 1px solid #ddd;">Anxieux</td><td style="padding: 8px; border: 1px solid #ddd;">Amusé</td></tr>
+                                    <tr><td style="padding: 8px; border: 1px solid #ddd;">Léger</td><td style="padding: 8px; border: 1px solid #ddd;">Ironique</td><td style="padding: 8px; border: 1px solid #ddd;">Mélancolique</td><td style="padding: 8px; border: 1px solid #ddd;">Prudent</td><td style="padding: 8px; border: 1px solid #ddd;">Original</td></tr>
+                                    <tr><td style="padding: 8px; border: 1px solid #ddd;">Humoristique</td><td style="padding: 8px; border: 1px solid #ddd;">Sarcastique</td><td style="padding: 8px; border: 1px solid #ddd;">Désespéré</td><td style="padding: 8px; border: 1px solid #ddd;">Tendu</td><td style="padding: 8px; border: 1px solid #ddd;">Sceptique</td></tr>
+                                    <tr><td style="padding: 8px; border: 1px solid #ddd;">Créatif</td><td style="padding: 8px; border: 1px solid #ddd;">Agressif</td><td style="padding: 8px; border: 1px solid #ddd;">Déçu</td><td style="padding: 8px; border: 1px solid #ddd;">Alarmiste</td><td style="padding: 8px; border: 1px solid #ddd;">Intrigué</td></tr>
+                                    <tr><td style="padding: 8px; border: 1px solid #ddd;">Enthousiaste</td><td style="padding: 8px; border: 1px solid #ddd;">Rancunier</td><td style="padding: 8px; border: 1px solid #ddd;">Nostalgique</td><td style="padding: 8px; border: 1px solid #ddd;">Paranoïaque</td><td style="padding: 8px; border: 1px solid #ddd;">Curieux</td></tr>
+                                    <tr><td style="padding: 8px; border: 1px solid #ddd;">Chaleureux</td><td style="padding: 8px; border: 1px solid #ddd;">Révolté</td><td style="padding: 8px; border: 1px solid #ddd;">Résigné</td><td style="padding: 8px; border: 1px solid #ddd;">Tourmenté</td><td style="padding: 8px; border: 1px solid #ddd;">Émerveillé</td></tr>
+                                    <tr><td style="padding: 8px; border: 1px solid #ddd;">Exalté</td><td style="padding: 8px; border: 1px solid #ddd;">Amer</td><td style="padding: 8px; border: 1px solid #ddd;">Pathétique</td><td style="padding: 8px; border: 1px solid #ddd;">Craintif</td><td style="padding: 8px; border: 1px solid #ddd;">Dérouté</td></tr>
+                                    <tr><td style="padding: 8px; border: 1px solid #ddd;">Motivant</td><td style="padding: 8px; border: 1px solid #ddd;">Provocateur</td><td style="padding: 8px; border: 1px solid #ddd;">Accablé</td><td style="padding: 8px; border: 1px solid #ddd;">Hésitant</td><td style="padding: 8px; border: 1px solid #ddd;">Stupéfait</td></tr>
+                                    <tr><td style="padding: 8px; border: 1px solid #ddd;">Rassurant</td><td style="padding: 8px; border: 1px solid #ddd;">Furieux</td><td style="padding: 8px; border: 1px solid #ddd;">Sombre</td><td style="padding: 8px; border: 1px solid #ddd;">Défensif</td><td style="padding: 8px; border: 1px solid #ddd;">Impressionné</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <br>
+                        <strong>Usage :</strong> "Adopte un ton [choisir dans le tableau] pour cette réponse"
+                    </div>
+                </div>
+        <div class="card complementary-card">
+            <div class="card-header">
+                <div>
+                    <div>
+                            <div class="card-title">EXEMPLE: Veille territoriale</div>
+                            
+                    </div>
+                    <div class="card-content">
+                        Prompt optimisé.
+                        <br>
+                        <br><strong>RÔLE</strong> : Agis comme un expert en développement territorial rural spécialisé dans les politiques de revitalisation.
+
+                        <br><strong>CONTEXTE</strong> : Je travaille sur des territoires ruraux de Nouvelle-Aquitaine confrontés au vieillissement démographique et à la raréfaction des services publics. Ma mission est d'identifier des innovations transférables.
+
+                        <br><strong>TÂCHE</strong> : Identifie 5 initiatives innovantes en Europe pour maintenir l'attractivité des bourgs-centres ruraux, avec pour chacune : contexte territorial, description de la solution, résultats obtenus et transférabilité en Nouvelle-Aquitaine.
+
+                        <br><br>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card complementary-card">
+            <div class="card-header">
+                <div>
+                    <div>
+                            <div class="card-title">EXEMPLE: Communication Institutionnelle</div>
+                            
+                    </div>
+                    <div class="card-content">
+                        Prompt long.
+                        <br>
+                        <br><strong>RÔLE</strong> : Agis comme un expert en communication territoriale spécialisé dans les enjeux ruraux.
+
+                        <br><strong>CONTEXTE</strong> : Je dois présenter à des maires de petites communes rurales les opportunités de l'économie circulaire dans le cadre de la stratégie Néo Terra. Ces élus sont souvent méfiants vis-à-vis des nouvelles technologies.
+
+                        <br><strong>TÂCHE</strong> : Rédige un email expliquant les bénéfices concrets de l'économie circulaire pour leurs communes, avec des exemples locaux, en vue d'une réunion d'information.
+
+                        <br><strong>OBJECTIF</strong> : Rendre le sujet pédagogique, engageant, prometteur, pour que les élus s'en emparent.
+
+                        <br><strong>TON</strong> : Pédagogique, rassurant, persuasif et avec une pointe d'humour.
+
+                        <br><strong>FORMAT</strong> : texte avec formules de politesse classiques en introduction et en conclusion
+
+                        <br><strong>CONTRAINTE</strong> : Longueur maximum 200 mots et pas d'émojis.
+
+                        <br><br>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+</body>
+</html>
