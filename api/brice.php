@@ -84,6 +84,7 @@ if ($apiKey === '') brice_respond(503, array('error' => 'Brice ne trouve pas sa 
 
 $catalogue = <<<'CATALOGUE'
 - Chat Public IA — dialoguer avec une IA pensée pour les usages publics — https://chat.public-ia.fr/
+- Les experts — cabinet virtuel d’experts territoriaux : des agents IA spécialisés instruisent une question de collectivité et remettent une note argumentée et sourcée — https://experts.public-ia.fr/
 - Concours photo IA — déposer une image générée par IA et voter pour sa préférée lors des formations — https://concours-photos.public-ia.fr/
 - Anonymiseur — retirer des données personnelles avant le partage d’un document — https://anonymiseur.public-ia.fr/
 - Conclave — faire confronter plusieurs IA pour éclairer une décision — https://conclave.public-ia.fr/
