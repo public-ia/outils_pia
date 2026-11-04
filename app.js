@@ -1,7 +1,8 @@
 const tools = [
   { name: "Chat Public IA", description: "Échanger avec une IA pensée pour les usages publics.", category: "Dialoguer", url: "https://chat.public-ia.fr/", color: "blue", featured: true },
+  { name: "Les experts", description: "Obtenir une note argumentée et sourcée d’agents IA experts.", category: "Décider", url: "https://experts.public-ia.fr/", color: "violet" },
   { name: "Concours photo IA", description: "Déposer une image générée par IA et voter pour sa préférée.", category: "Se former", url: "https://concours-photos.public-ia.fr/", color: "orange" },
-  { name: "Mandat 360", description: "Découvrir Mandat 360, un outil Public IA actuellement en phase de test.", category: "Dialoguer", url: "https://staging.mandat-360.public-ia.fr/", color: "orange" },
+  { name: "Mandat 360", description: "Découvrir Mandat 360, outil actuellement en phase de test.", category: "Dialoguer", url: "https://staging.mandat-360.public-ia.fr/", color: "orange" },
   { name: "Anonymiseur", description: "Retirer les données personnelles avant de partager un document.", category: "Protéger", url: "https://anonymiseur.public-ia.fr/", color: "teal", featured: true },
   { name: "Conclave", description: "Faire confronter plusieurs IA pour éclairer une décision.", category: "Décider", url: "https://conclave.public-ia.fr/", color: "violet", featured: true },
   { name: "Graphe", description: "Transformer des documents en graphe de connaissances navigable.", category: "Comprendre", url: "https://graphe.public-ia.fr/", color: "lime", featured: true },
@@ -62,7 +63,7 @@ const filterGroups = {
 };
 let activeCategory = "Tous";
 
-const bentoSizes = ["tile--lead", "tile--tall", "tile--tall", "tile--wide", "tile--wide", "", "tile--wide", "", "", "tile--tall", "", "", "", "tile--wide", "tile--tall", "", "", "tile--wide", "", "", "", "tile--tall", "tile--wide", "", "tile--wide", "tile--wide", "tile--wide"];
+const bentoSizes = ["tile--lead", "tile--tall", "tile--tall", "tile--wide", "tile--wide", "", "tile--wide", "", "", "tile--tall", "", "", "", "tile--wide", "tile--tall", "", "", "tile--wide", "", "tile--wide", "", "tile--tall", "tile--wide", "tile--tall", "tile--wide", "tile--wide", "tile--wide", "tile--wide"];
 
 function tileMarkup(tool) {
   const theme = colorThemes[tool.color];
