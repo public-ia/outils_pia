@@ -1,17 +1,93 @@
 <!doctype html>
 <html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Le catalogue des outils Public IA." />
+    <title>Outils Public IA</title>
+    <link rel="stylesheet" href="./styles.css?v=6" />
+  </head>
+  <body>
+    <a class="skip-link" href="#catalogue">Aller au catalogue</a>
+    <header class="site-header">
+      <a class="brand" href="#accueil" aria-label="Outils Public IA, accueil">
+        <span class="brand-public">PUBLIC</span><span class="brand-ia">IA</span>
+        <span class="brand-divider" aria-hidden="true"></span>
+        <span>Outils</span>
+      </a>
+    </header>
 
-<head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/png" href="/favicon.png" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>outils Public IA</title>
-  <script type="module" crossorigin src="/assets/index-yzJ2LqRE.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-B1BZfRPB.css">
-</head>
+    <main id="accueil">
+      <section class="intro" aria-labelledby="page-title">
+        <p class="intro-mark">+</p>
+        <div>
+          <h1 id="page-title">Les outils de Public IA</h1>
+        </div>
+        <p class="availability"><span aria-hidden="true"></span> Tous les outils présentés sont disponibles</p>
+      </section>
 
-<body>
-  <div id="root"></div>
-</body>
+      <section class="catalogue" id="catalogue" aria-labelledby="catalogue-title">
+        <div class="catalogue-heading">
+          <div>
+            <h2 id="catalogue-title">Tous les outils</h2>
+            <p id="tool-count" aria-live="polite">Explorez par besoin, puis accédez directement à l’outil.</p>
+          </div>
+        </div>
 
+        <div class="finder" role="search">
+          <label class="search-field" for="tool-search">
+            <span class="search-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Rechercher un outil</span>
+            <input id="tool-search" type="search" autocomplete="off" placeholder="Rechercher par besoin ou par nom…" />
+            <button id="clear-search" type="button" aria-label="Effacer la recherche" hidden>×</button>
+          </label>
+          <div class="filters" id="filters" role="group" aria-label="Filtrer les outils par usage"></div>
+        </div>
+
+        <p class="visually-hidden" id="filter-summary" aria-live="polite"></p>
+
+        <ul class="tool-grid" id="tool-list"></ul>
+        <div class="empty-state" id="empty-state" hidden>
+          <p>Aucun outil ne correspond à cette recherche.</p>
+          <button id="reset-filters" type="button">Voir tous les outils</button>
+        </div>
+      </section>
+    </main>
+
+    <button class="brice-launcher" id="brice-launcher" type="button" aria-expanded="false" aria-controls="brice-panel">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 18.5 3.5 21l4.1-1.2A8.5 8.5 0 1 0 3.5 12"/><path d="M8 12h.01M12 12h.01M16 12h.01"/></svg>
+      <span>Brice</span>
+    </button>
+
+    <aside class="brice-panel" id="brice-panel" aria-labelledby="brice-title" hidden>
+      <div class="brice-heading">
+        <div>
+          <p class="brice-name">Brice</p>
+          <h2 id="brice-title">Quel outil vous serait utile ?</h2>
+        </div>
+        <button class="brice-close" id="brice-close" type="button" aria-label="Fermer Brice">×</button>
+      </div>
+      <div class="brice-messages" id="brice-messages" role="log" aria-live="polite" aria-label="Conversation avec Brice">
+        <p class="brice-message brice-message--assistant">Bonjour, je suis Brice. Je vous aide à repérer l’outil Public IA adapté à votre besoin.</p>
+      </div>
+      <div class="brice-suggestions" aria-label="Questions suggérées">
+        <button type="button" data-brice-question="Je dois protéger des données avant de les partager.">Protéger des données</button>
+        <button type="button" data-brice-question="Je veux comparer plusieurs IA avant de décider.">Comparer plusieurs IA</button>
+        <button type="button" data-brice-question="Je veux créer une charte IA pour ma collectivité.">Créer une charte IA</button>
+      </div>
+      <form class="brice-form" id="brice-form">
+        <label class="visually-hidden" for="brice-input">Votre question sur les outils Public IA</label>
+        <input id="brice-input" name="question" type="text" maxlength="800" autocomplete="off" placeholder="Posez votre question…" required />
+        <button type="submit">Envoyer</button>
+      </form>
+      <p class="brice-note">N’indiquez pas de données personnelles ou confidentielles.</p>
+      <p class="brice-status" id="brice-status" role="status" aria-live="polite"></p>
+    </aside>
+
+    <footer class="site-footer">
+      <p><strong>Public IA</strong> · des outils concrets pour les usages publics de l’intelligence artificielle.</p>
+      <a href="https://public-ia.fr/" target="_blank" rel="noreferrer" aria-label="public-ia.fr, s’ouvre dans un nouvel onglet">public-ia.fr <span aria-hidden="true">↗</span></a>
+    </footer>
+    <script src="./app.js?v=7"></script>
+  </body>
 </html>
