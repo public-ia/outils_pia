@@ -84,6 +84,7 @@ if ($apiKey === '') brice_respond(503, array('error' => 'Brice ne trouve pas sa 
 
 $catalogue = <<<'CATALOGUE'
 - Chat Public IA — dialoguer avec une IA pensée pour les usages publics — https://chat.public-ia.fr/
+- Concours photo IA — déposer une image générée par IA et voter pour sa préférée lors des formations — https://concours-photos.public-ia.fr/
 - Anonymiseur — retirer des données personnelles avant le partage d’un document — https://anonymiseur.public-ia.fr/
 - Conclave — faire confronter plusieurs IA pour éclairer une décision — https://conclave.public-ia.fr/
 - Graphe — transformer des documents en graphe de connaissances navigable — https://graphe.public-ia.fr/
@@ -107,7 +108,6 @@ $catalogue = <<<'CATALOGUE'
 - Upload de fichiers — partager des présentations avec QR codes — https://fichiers.public-ia.fr/upload_qrcode_8f3c2a1b7e.html
 - Formulaire IA Collectivités — exprimer les besoins IA d’une administration territoriale — https://tally.so/r/w4O1ed
 - n8n Workflow Automation — créer et piloter des automatisations de processus — https://n8n.public-ia.fr/home/workflows
-- Concours photo IA — déposer une image générée par IA et voter pour sa préférée lors des formations — https://concours-photos.public-ia.fr/
 - Public IA — découvrir la mission, les projets et les ressources Public IA — https://public-ia.fr/
 CATALOGUE;
 

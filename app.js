@@ -1,11 +1,12 @@
 const tools = [
   { name: "Chat Public IA", description: "Échanger avec une IA pensée pour les usages publics.", category: "Dialoguer", url: "https://chat.public-ia.fr/", color: "blue", featured: true },
+  { name: "Concours photo IA", description: "Déposer une image générée par IA et voter pour sa préférée.", category: "Se former", url: "https://concours-photos.public-ia.fr/", color: "orange" },
   { name: "Mandat 360", description: "Découvrir Mandat 360, un outil Public IA actuellement en phase de test.", category: "Dialoguer", url: "https://staging.mandat-360.public-ia.fr/", color: "orange" },
   { name: "Anonymiseur", description: "Retirer les données personnelles avant de partager un document.", category: "Protéger", url: "https://anonymiseur.public-ia.fr/", color: "teal", featured: true },
   { name: "Conclave", description: "Faire confronter plusieurs IA pour éclairer une décision.", category: "Décider", url: "https://conclave.public-ia.fr/", color: "violet", featured: true },
   { name: "Graphe", description: "Transformer des documents en graphe de connaissances navigable.", category: "Comprendre", url: "https://graphe.public-ia.fr/", color: "lime", featured: true },
   { name: "INSEE Dossiers complets", description: "Produire des dossiers complets à partir des données de l’INSEE.", category: "Analyser", url: "https://insee-dossier-complet.streamlit.app/", color: "blue" },
-  { name: "Observatoire IA", description: "Explorer les données de l’Observatoire Data Publica sur l’IA dans les collectivités.", category: "Comprendre", url: "https://observatoire.public-ia.fr/", color: "lime" },
+  { name: "Observatoire IA", description: "Explorer les données sur l’IA dans les collectivités.", category: "Comprendre", url: "https://observatoire.public-ia.fr/", color: "lime" },
   { name: "Charte IA", description: "Créer une charte IA adaptée à sa collectivité.", category: "Concevoir", url: "https://charte-ia.public-ia.fr/", color: "violet" },
   { name: "Formation", description: "Accéder aux contenus et parcours de formation.", category: "Se former", url: "https://colter.public-ia.fr/", color: "orange" },
   { name: "Questionnaire", description: "Construire des questionnaires pondérés de mise en situation.", category: "Évaluer", url: "https://questionnaire.public-ia.fr/", color: "orange" },
@@ -14,7 +15,7 @@ const tools = [
   { name: "GPT Hub", description: "Accéder à différents modèles conversationnels et assistants.", category: "Dialoguer", url: "https://gpthub.public-ia.fr/", color: "blue" },
   { name: "Fiche IA", description: "Cadrer la mise en place d’un projet IA dans une collectivité.", category: "Concevoir", url: "https://fiche-ia.public-ia.fr/", color: "violet" },
   { name: "Matrice IA", description: "Visualiser la faisabilité des projets IA sous forme matricielle.", category: "Décider", url: "https://matrice-ia.public-ia.fr/", color: "violet" },
-  { name: "Quelle IA pour ma collectivité ?", description: "Choisir une IA avec un arbre de décision dédié aux collectivités.", category: "Décider", url: "https://claude.ai/public/artifacts/c2d7b5c2-c896-4fa8-b1a6-826cedd89a8f", color: "violet" },
+  { name: "Quelle IA pour ma collectivité ?", description: "Choisir une IA par arbre de décision.", category: "Décider", url: "https://claude.ai/public/artifacts/c2d7b5c2-c896-4fa8-b1a6-826cedd89a8f", color: "violet" },
   { name: "LLM Pédago", description: "Comprendre et expérimenter avec les modèles de langage.", category: "Se former", url: "https://llmpedago.public-ia.fr/", color: "orange" },
   { name: "Guide du prompting", description: "Apprendre à formuler de meilleurs prompts.", category: "Se former", url: "https://guide-llm.public-ia.fr/", color: "orange" },
   { name: "Nuage de mots", description: "Visualiser et analyser un texte sous forme de nuage de mots.", category: "Analyser", url: "https://nuagedemots.public-ia.fr/", color: "blue" },
@@ -24,7 +25,6 @@ const tools = [
   { name: "Upload de fichiers", description: "Partager des présentations avec génération de QR codes.", category: "Partager", url: "https://fichiers.public-ia.fr/upload_qrcode_8f3c2a1b7e.html", color: "teal" },
   { name: "Formulaire IA Collectivités", description: "Exprimer les besoins IA d’une administration territoriale.", category: "Concevoir", url: "https://tally.so/r/w4O1ed", color: "violet" },
   { name: "n8n Workflow Automation", description: "Créer et piloter des automatisations de processus.", category: "Automatiser", url: "https://n8n.public-ia.fr/home/workflows", color: "teal" },
-  { name: "Concours photo IA", description: "Déposer une image générée par IA et voter pour sa préférée.", category: "Se former", url: "https://concours-photos.public-ia.fr/", color: "orange" },
   { name: "Public IA", description: "Découvrir la mission, les projets et les ressources Public IA.", category: "Découvrir", url: "https://public-ia.fr/", color: "blue" }
 ];
 
