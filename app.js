@@ -24,6 +24,7 @@ const tools = [
   { name: "Upload de fichiers", description: "Partager des présentations avec génération de QR codes.", category: "Partager", url: "https://fichiers.public-ia.fr/upload_qrcode_8f3c2a1b7e.html", color: "teal" },
   { name: "Formulaire IA Collectivités", description: "Exprimer les besoins IA d’une administration territoriale.", category: "Concevoir", url: "https://tally.so/r/w4O1ed", color: "violet" },
   { name: "n8n Workflow Automation", description: "Créer et piloter des automatisations de processus.", category: "Automatiser", url: "https://n8n.public-ia.fr/home/workflows", color: "teal" },
+  { name: "Concours photo IA", description: "Déposer une image générée par IA et voter pour sa préférée.", category: "Se former", url: "https://concours-photos.public-ia.fr/", color: "orange" },
   { name: "Public IA", description: "Découvrir la mission, les projets et les ressources Public IA.", category: "Découvrir", url: "https://public-ia.fr/", color: "blue" }
 ];
 
@@ -61,7 +62,7 @@ const filterGroups = {
 };
 let activeCategory = "Tous";
 
-const bentoSizes = ["tile--lead", "tile--tall", "tile--tall", "tile--wide", "tile--wide", "", "tile--wide", "", "", "tile--tall", "", "", "", "tile--wide", "tile--tall", "", "", "tile--wide", "", "", "", "tile--tall", "tile--wide", "", ""];
+const bentoSizes = ["tile--lead", "tile--tall", "tile--tall", "tile--wide", "tile--wide", "", "tile--wide", "", "", "tile--tall", "", "", "", "tile--wide", "tile--tall", "", "", "tile--wide", "", "", "", "tile--tall", "tile--wide", "", "tile--wide", "tile--wide", "tile--wide"];
 
 function tileMarkup(tool) {
   const theme = colorThemes[tool.color];

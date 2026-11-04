@@ -20,6 +20,19 @@ Pour tester en local, servir le dossier avec un serveur PHP, par exemple :
 php -S localhost:8000
 ```
 
+## Ajouter une brique au catalogue
+
+Une brique est une petite application développée par Public IA, hébergée sur son propre sous-domaine (par exemple `https://concours-photos.public-ia.fr/`). Le site outils l'affiche sous forme de tuile dans la grille bento, avec un lien vers ce sous-domaine. Pour en ajouter une :
+
+1. **`app.js`, tableau `tools`** : ajouter une entrée `{ name, description, category, url, color }`, juste avant « Public IA », qui reste en dernier.
+   - `description` : une phrase courte, environ 60 caractères, sinon le texte déborde et masque « Accéder ».
+   - `category` : une catégorie existante de `icons` (Dialoguer, Protéger, Décider, Comprendre, Analyser, Concevoir, Se former, Évaluer, Partager, Automatiser, Découvrir). Une nouvelle catégorie demande aussi une icône dans `icons` et une entrée dans `filterGroups`.
+   - `color` : `blue`, `teal`, `violet`, `lime` ou `orange`, cohérente avec les autres outils de la même catégorie.
+2. **`app.js`, tableau `bentoSizes`** : la taille de chaque tuile dépend de sa **position** dans `tools` (`tile--lead` = 2×2, `tile--wide` = 2×1, `tile--tall` = 1×2, `""` = 1×1). La grille a 4 colonnes : le total des cases doit être un multiple de 4, sinon la dernière ligne a des trous. Insérer un outil au milieu décale la taille de toutes les tuiles suivantes.
+3. **`api/brice.php`, bloc `$catalogue`** : ajouter la même brique (`- Nom — usage — URL`). Sans cela, Brice ne la recommandera jamais. Inversement, un lien cité par Brice n'est affiché que si son URL figure dans `tools`.
+4. **`index.html`** : incrémenter `app.js?v=…` (et `styles.css?v=…` si le CSS change).
+5. **Vérifier en local** (`php -S localhost:8000`) que la grille est complète sur grand écran et que la tuile s'affiche bien sur mobile.
+
 ## Le déploiement
 
 - **Toute fusion dans `main` déploie automatiquement** le site sur le FTP OVH (dossier `/outils/`), via le workflow `.github/workflows/deploy.yml`. Il n'y a pas d'environnement de préproduction : ce qui arrive sur `main` est en ligne quelques minutes plus tard.
