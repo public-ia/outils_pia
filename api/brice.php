@@ -107,6 +107,7 @@ $catalogue = <<<'CATALOGUE'
 - Upload de fichiers — partager des présentations avec QR codes — https://fichiers.public-ia.fr/upload_qrcode_8f3c2a1b7e.html
 - Formulaire IA Collectivités — exprimer les besoins IA d’une administration territoriale — https://tally.so/r/w4O1ed
 - n8n Workflow Automation — créer et piloter des automatisations de processus — https://n8n.public-ia.fr/home/workflows
+- Concours photo IA — déposer une image générée par IA et voter pour sa préférée lors des formations — https://concours-photos.public-ia.fr/
 - Public IA — découvrir la mission, les projets et les ressources Public IA — https://public-ia.fr/
 CATALOGUE;
 
