@@ -21,7 +21,6 @@ La page présente les briques de Public IA sous forme de grille (« bento ») av
 7. [Déploiement](#déploiement)
 8. [Le FTP : contrôle uniquement](#le-ftp--contrôle-uniquement)
 9. [Sécurité et secrets](#sécurité-et-secrets)
-10. [Fichiers hérités](#fichiers-hérités)
 
 ---
 
@@ -45,7 +44,6 @@ La page présente les briques de Public IA sous forme de grille (« bento ») av
 | `.github/workflows/deploy.yml` | Workflow de déploiement automatique sur le FTP OVH. |
 | `CLAUDE.md` | Consignes pour Claude et les contributeurs (non publié). |
 | `guide_llm.html` | Document de travail (non publié). |
-| `assets/`, `vite.svg` | Fichiers hérités, voir [plus bas](#fichiers-hérités). |
 
 ### Cache des navigateurs
 
@@ -164,12 +162,3 @@ Seule exception : le fichier privé `brice-private.php` (clé d'API), qui vit ho
 - **Aucun secret dans le dépôt** : ni clé d'API, ni mot de passe, ni identifiant FTP, ni jeton, ni fichier de configuration privé.
 - Les identifiants FTP sont dans les **secrets GitHub** ; la clé OpenAI est sur le **serveur**, hors du dossier publié.
 - Brice n'enregistre pas les conversations côté OpenAI (`store: false`) et l'interface rappelle de ne pas saisir de données personnelles ou confidentielles.
-
-## Fichiers hérités
-
-Les fichiers suivants ne sont **plus utilisés** par la page actuelle :
-
-- `assets/` (anciens bundles générés par Vite)
-- `vite.svg`
-
-Ne pas s'appuyer dessus ni les modifier. À noter : ils ne sont pas exclus du déploiement et sont donc encore envoyés sur le serveur.

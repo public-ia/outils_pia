@@ -44,12 +44,3 @@ Une brique est une petite application développée par Public IA, hébergée sur
 1. **Toujours travailler sur une branche** et passer par une **pull request** pour arriver sur `main`. Ne jamais pousser directement sur `main`.
 2. **Ne jamais commiter de secrets ni d'identifiants** : clés d'API, mots de passe, identifiants FTP, jetons, fichiers de configuration privés (comme `brice-private.php`). Ils vont dans les secrets GitHub ou sur le serveur, hors du dépôt.
 3. **Ne jamais modifier le serveur directement** (FTP, gestionnaire de fichiers OVH, etc.). Toute modification passe par le dépôt et le déploiement automatique, sinon elle sera écrasée ou créera un écart entre le dépôt et la production.
-
-## Les fichiers hérités
-
-Les fichiers suivants **ne sont plus utilisés par la page actuelle** :
-
-- `assets/` (anciens bundles générés par Vite)
-- `vite.svg`
-
-Ne pas s'appuyer dessus ni les modifier pour faire évoluer le site : les changements se font dans `index.html`, `styles.css`, `app.js` et `api/`. À noter : ils ne figurent pas dans la liste `exclude` et sont donc encore envoyés sur le serveur.
