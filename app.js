@@ -1,5 +1,6 @@
 const tools = [
   { name: "Chat Public IA", description: "Échanger avec une IA pensée pour les usages publics.", category: "Dialoguer", url: "https://chat.public-ia.fr/", color: "blue", featured: true },
+  { name: "Guide du prompting C.R.E.A.T.", description: "Écrire de meilleurs prompts avec la méthode C.R.E.A.T.", category: "Se former", url: "https://guide-du-prompting.public-ia.fr/", color: "orange" },
   { name: "Les experts", description: "Obtenir une note argumentée et sourcée d’agents IA experts.", category: "Décider", url: "https://experts.public-ia.fr/", color: "violet" },
   { name: "Concours photo IA", description: "Déposer une image générée par IA et voter pour sa préférée.", category: "Se former", url: "https://concours-photos.public-ia.fr/", color: "orange" },
   { name: "Mandat 360", description: "Découvrir Mandat 360, outil actuellement en phase de test.", category: "Dialoguer", url: "https://staging.mandat-360.public-ia.fr/", color: "orange" },
@@ -63,7 +64,7 @@ const filterGroups = {
 };
 let activeCategory = "Tous";
 
-const bentoSizes = ["tile--lead", "tile--tall", "tile--tall", "tile--wide", "tile--wide", "", "tile--wide", "", "", "tile--tall", "", "", "", "tile--wide", "tile--tall", "", "", "tile--wide", "", "tile--wide", "", "tile--tall", "tile--wide", "tile--tall", "tile--wide", "tile--wide", "tile--wide", "tile--wide"];
+const bentoSizes = ["tile--lead", "tile--tall", "tile--tall", "tile--wide", "tile--wide", "", "tile--wide", "", "", "tile--tall", "", "", "", "tile--wide", "tile--tall", "", "", "tile--wide", "", "tile--wide", "", "tile--tall", "tile--wide", "tile--tall", "tile--wide", "tile--wide", "tile--wide", "", ""];
 
 function tileMarkup(tool) {
   const theme = colorThemes[tool.color];
