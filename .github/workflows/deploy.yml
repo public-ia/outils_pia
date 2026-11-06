@@ -27,5 +27,4 @@ jobs:
             **/node_modules/**
             README.md
             CLAUDE.md
-            index_old.html
             guide_llm.html
