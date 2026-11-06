@@ -21,6 +21,7 @@ La page présente les briques de Public IA sous forme de grille (« bento ») av
 7. [Déploiement](#déploiement)
 8. [Le FTP : contrôle uniquement](#le-ftp--contrôle-uniquement)
 9. [Sécurité et secrets](#sécurité-et-secrets)
+10. [Licence](#licence)
 
 ---
 
@@ -44,6 +45,8 @@ La page présente les briques de Public IA sous forme de grille (« bento ») av
 | `.github/workflows/deploy.yml` | Workflow de déploiement automatique sur le FTP OVH. |
 | `CLAUDE.md` | Consignes pour Claude et les contributeurs (non publié). |
 | `guide_llm.html` | Document de travail (non publié). |
+| `LICENSE` | Texte de la Licence Ouverte 2.0 (non publié). |
+| `SECURITY.md` | Politique de signalement des failles (non publiée). |
 
 ### Cache des navigateurs
 
@@ -131,7 +134,7 @@ Il n'y a **pas d'environnement de préproduction** : ce qui arrive sur `main` es
 
 ### Exclure un fichier du déploiement
 
-Tout fichier du dépôt est publié, sauf ceux listés dans la section `exclude` de `deploy.yml` (actuellement `.git*`, `node_modules`, `README.md`, `CLAUDE.md`, `guide_llm.html`). **Un fichier qui ne doit pas être en ligne doit y être ajouté.**
+Tout fichier du dépôt est publié, sauf ceux listés dans la section `exclude` de `deploy.yml` (actuellement `.git*`, `node_modules`, `README.md`, `CLAUDE.md`, `LICENSE`, `SECURITY.md`, `guide_llm.html`). **Un fichier qui ne doit pas être en ligne doit y être ajouté.**
 
 ### Suivre un déploiement
 
@@ -162,3 +165,12 @@ Seule exception : le fichier privé `brice-private.php` (clé d'API), qui vit ho
 - **Aucun secret dans le dépôt** : ni clé d'API, ni mot de passe, ni identifiant FTP, ni jeton, ni fichier de configuration privé.
 - Les identifiants FTP sont dans les **secrets GitHub** ; la clé OpenAI est sur le **serveur**, hors du dossier publié.
 - Brice n'enregistre pas les conversations côté OpenAI (`store: false`) et l'interface rappelle de ne pas saisir de données personnelles ou confidentielles.
+- Pour signaler une faille, voir [SECURITY.md](SECURITY.md) : pas d'issue publique, utiliser le signalement privé de GitHub.
+
+## Licence
+
+Le code de ce dépôt est publié par Public IA sous la [**Licence Ouverte 2.0 / Open Licence 2.0**](LICENSE) d'Etalab (identifiant SPDX : `etalab-2.0`).
+
+Vous pouvez le réutiliser, le modifier et le redistribuer librement, y compris à des fins commerciales, à condition de mentionner la source : « Public IA — https://github.com/public-ia/outils_pia », avec la date de la dernière mise à jour utilisée.
+
+Le nom « Public IA » et les logos (`logo-dark.png`, `logo-light.png`, `favicon.png`, `legacy-icon.png`) ne sont pas couverts par cette licence : leur réutilisation ne doit pas laisser croire à une caution de Public IA.

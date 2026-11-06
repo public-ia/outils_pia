@@ -27,4 +27,6 @@ jobs:
             **/node_modules/**
             README.md
             CLAUDE.md
+            LICENSE
+            SECURITY.md
             guide_llm.html
